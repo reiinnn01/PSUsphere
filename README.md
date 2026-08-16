@@ -22,8 +22,6 @@ PSUSphere is a Django-based web application for managing student and student org
 * Python
 * Django
 * Faker
-* SQLite
-* HTML
 * Git and GitHub
 
 ## Project Structure

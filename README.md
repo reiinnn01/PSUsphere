@@ -42,19 +42,31 @@ PSUSphere/
 ## How to Run
 
 1. Activate the virtual environment.
+
+```text
 myenv\Scripts\activate
+```
 
 2. Go to the directory containing `manage.py`.
+
+```text
 cd PSUsphere\projectsite
+```
 
 3. Run the Django development server.
+```text
 python manage.py runserver
+```
 
 4. Open the website in your browser:
+```text
 http://127.0.0.1:8000/
+```
 
 5. To access the Django Admin:
+```text
 http://127.0.0.1:8000/admin/
+```
 
 ## Authors
 * Aaron John B. Sulleza

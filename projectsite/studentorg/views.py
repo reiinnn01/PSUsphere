@@ -75,7 +75,7 @@ class ProgramCreateView(CreateView):
 
 class ProgramUpdateView(UpdateView):
     model = Program
-    form_class = OrganizationForm
+    form_class = ProgramForm
     template_name = 'program_form.html'
     success_url = reverse_lazy('program-list')
 
@@ -112,9 +112,9 @@ class StudentDeleteView(DeleteView):
 
 class OrgMemberList(ListView):
     model = OrgMember
-    context_object_name = 'org member'
-    template_name = 'org_list.html'
-    paginate_by = 5
+    context_object_name = 'orgmember'
+    template_name = 'orgmember_list.html'
+    paginate_by = 10
 
 class OrgMemberCreateView(CreateView):
     model = OrgMember

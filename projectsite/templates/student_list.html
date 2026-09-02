@@ -22,16 +22,19 @@
                         </div>
 
                         <div class="card-category">
-                            Page Subtitle
+                            Student List
                         </div>
 
                     </div>
 
                     <br />
 
+                    <!-- SEARCH AND ADD -->
+
                     <div class="col-md-12 row">
 
                         <!-- Search -->
+
                         <div class="col-md-6">
 
                             <form
@@ -46,7 +49,7 @@
                                         type="text"
                                         name="q"
                                         placeholder="Search ..."
-                                        value="{{ request.GET.q }}"
+                                        value="{{ request.GET.q|default:'' }}"
                                         class="form-control"
                                     />
 
@@ -67,7 +70,9 @@
 
                         </div>
 
+
                         <!-- Add Student -->
+
                         <div class="col-md-6">
 
                             <div class="pull-right">
@@ -76,7 +81,7 @@
                                     href="{% url 'student-add' %}"
                                     class="btn btn-success btn-rounded"
                                 >
-                                    Add Students
+                                    Add Student
                                 </a>
 
                             </div>
@@ -84,6 +89,9 @@
                         </div>
 
                     </div>
+
+
+                    <!-- TABLE -->
 
                     <div class="card-body">
 
@@ -121,6 +129,7 @@
 
                             </thead>
 
+
                             <tbody>
 
                                 {% for object in object_list %}
@@ -155,6 +164,8 @@
                                             Edit
                                         </a>
 
+                                        &nbsp;
+
                                         <a
                                             href="{% url 'student-delete' object.id %}"
                                             class="text-danger"
@@ -165,6 +176,7 @@
                                     </td>
 
                                 </tr>
+
 
                                 {% empty %}
 
@@ -188,6 +200,9 @@
                             </tbody>
 
                         </table>
+
+
+                        <!-- PAGINATION -->
 
                         {% include 'includes/pagination.html' %}
 

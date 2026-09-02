@@ -39,22 +39,24 @@ class HomePageView(ListView):
 # ORGANIZATION
 
 class OrganizationList(ListView):
-
     model = Organization
     context_object_name = 'organization'
     template_name = 'org_list.html'
     paginate_by = 5
+    ordering = ["college__college_name", "name"]
 
     def get_queryset(self):
         qs = super().get_queryset()
+
         query = self.request.GET.get('q')
+
         if query:
             qs = qs.filter(
                 Q(name__icontains=query) |
                 Q(description__icontains=query)
             )
+
         return qs
-    ordering = ["college__college_name", "name"]
 
 
 class OrganizationCreateView(CreateView):
@@ -90,12 +92,16 @@ class CollegeList(ListView):
     paginate_by = 5
 
     def get_queryset(self):
+
         qs = super().get_queryset()
+
         query = self.request.GET.get('q')
+
         if query:
             qs = qs.filter(
                 Q(college_name__icontains=query)
             )
+
         return qs
 
 
@@ -185,8 +191,11 @@ class StudentList(ListView):
     paginate_by = 10
 
     def get_queryset(self):
+
         qs = super().get_queryset()
+
         query = self.request.GET.get('q')
+
         if query:
             qs = qs.filter(
                 Q(student_id__icontains=query) |
@@ -194,6 +203,7 @@ class StudentList(ListView):
                 Q(firstname__icontains=query) |
                 Q(middlename__icontains=query)
             )
+
         return qs
 
 

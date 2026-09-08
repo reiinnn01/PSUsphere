@@ -280,7 +280,9 @@
                                 </li>
 
                                 <li>
-                                    <a class="dropdown-item" href="#">
+                                    <form method="post" action="{% url 'account_logout' %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="dropdown-item">
                                         <i class="fa fa-power-off"></i> Logout
                                     </a>
                                 </li>

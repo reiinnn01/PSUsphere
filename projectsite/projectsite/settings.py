@@ -152,8 +152,15 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/'                    # where to redirect after l
 ACCOUNT_LOGOUT_ON_GET = True                         # logout immediately on GET
 ACCOUNT_LOGIN_METHODS = {"username", "email"}        # allow login with username OR email
 ACCOUNT_SIGNUP_FIELDS = [
+    
 "username*",
 "email*",
 "password1*",
 "password2*",
 ]
+SOCIALACCOUNT_AUTO_SIGNUP = False
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = True
+SOCIALACCOUNT_STORE_TOKENS = False
+SOCIALACCOUNT_EMAIL_AUTHENTICATION = True
+SOCIALACCOUNT_EMAIL_AUTHENTICATION_AUTO_CONNECT = True
